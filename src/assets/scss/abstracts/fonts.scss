@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,500i,700,900&display=swap');
+
+body {
+    font-family: Poppins;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../../fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-weight: bold;
+    font-family: Poppins;
+    src: url('../../fonts/Poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: Poppins;
+    src: url('../../fonts/Poppins/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../../fonts/Montserrat/Montserrat-Medium.ttf');
+}

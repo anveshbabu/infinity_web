@@ -1,0 +1,21 @@
+@import '../../../assets/scss//abstracts/abstracts-dir.scss';
+.sigin-page{
+
+h4 {
+    color: #3D4856;
+}
+    a {
+        font-family: Montserrat;
+        font-size: fontSize(13px);
+        cursor: pointer;
+    
+        &:hover {
+            text-decoration: unset !important;
+            color: $primary-bg !important;
+        }
+    }
+    .btn {
+        font-family: Montserrat;
+        font-size: fontSize(14px);
+    }
+}

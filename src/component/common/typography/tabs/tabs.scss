@@ -1,0 +1,15 @@
+@import'../../../../assets/scss/abstracts/abstracts-dir.scss';
+.ab-tabs{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+.nav-item{
+    font-size: 16px;
+    color: #6C6C6C;
+ 
+    &.active{
+        font-weight: 500;
+       color: $primary-bg;
+    }
+}
+
+
+}

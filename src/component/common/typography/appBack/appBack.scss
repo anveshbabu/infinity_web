@@ -1,0 +1,9 @@
+@import '../../../../assets/scss/abstracts/abstracts-dir.scss';
+.app-back{
+    // background-color: transparent;
+    color: $primary-bg !important;
+    font-size: 14px;
+    i{
+        font-size: 12px;
+    }
+}

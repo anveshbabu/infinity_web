@@ -1,0 +1,61 @@
+@import '../../../assets/scss//abstracts/abstracts-dir.scss';
+
+.login-page {
+
+
+    .logo-login {
+        background-color: $primary-bg;
+        height: 100vh;
+
+        img {
+            margin: 0 auto;
+        }
+
+    }
+
+    h4 {
+        color: #3D4856;
+        font-weight: 500;
+        font-size: fontSize(28px);
+    }
+
+    .title {
+        margin-bottom: 3.125rem;
+    }
+
+    a {
+        font-family: Montserrat;
+        font-size: fontSize(13px);
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: unset !important;
+            color: $primary-bg !important;
+        }
+    }
+
+    .btn {
+        font-family: Montserrat;
+        font-size: fontSize(14px);
+    }
+
+    .login-checkbox {
+        .custom-control {
+            font-size: fontSize(13px);
+            font-family: Montserrat;
+
+            .custom-control-label {
+                &:before {
+                    width: fontSize(13px);
+                    height: fontSize(13px);
+                }
+
+                &:after {
+                    top:  fontSize(2px);
+                    left: -1.6rem;
+                }
+            }
+        }
+
+    }
+}

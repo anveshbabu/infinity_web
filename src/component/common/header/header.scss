@@ -1,0 +1,43 @@
+@import '../../../assets/scss//abstracts/abstracts-dir.scss';
+
+nav {
+    &.navbar {
+        height: 73px;
+        background-color: $nav-bg;
+    }
+
+    .menu-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+
+        border-radius: 0.25rem;
+
+        i {
+            color: $white;
+        }
+    }
+
+    .user-detail {
+        li {
+            padding: 15px;
+
+            a {
+                vertical-align: sub;
+
+                i {
+                    vertical-align: middle;
+                }
+
+                color: #ffffff;
+                text-decoration: unset;
+            }
+
+            +li {
+                border-left: 1px solid #ffff;
+            }
+        }
+    }
+}

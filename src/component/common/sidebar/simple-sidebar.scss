@@ -1,0 +1,158 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+@import '../../../assets/scss/abstracts/abstracts-dir.scss';
+
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-top: 35px;
+}
+
+#sidebar-wrapper .list-group {
+  width: fontSize(236px);
+  // margin: 0 1rem;
+  // margin-top: 1rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  padding: 1.5rem;
+}
+
+.list-group.list-group-flush {
+  flex: 1;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.list-group-flush {
+  .list-group-item {
+    padding: 1rem 1.25rem;
+    // margin-bottom: 0.8rem;  
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    &.active {
+      background-color: #2D2F4E !important;
+      color: #ffffff;
+      border-color: #f8f9fa;
+      i{
+        &::before{
+          color: #ffffff;
+        }
+       
+      }
+
+    }
+
+    .material-icons {
+      vertical-align: middle;
+    }
+
+    .up-aero {
+      display: none;
+    }
+
+    .down-aero {
+      animation: icon-turn 0.3s linear;
+    }
+
+    &.show {
+      .sub-menu {
+        display: unset;
+      }
+
+      .down-aero {
+        display: none;
+      }
+
+      .up-aero {
+        display: block;
+        animation: icon-spin 0.3s linear;
+        transition: all 0.3s ease-in-out;
+        transform: rotate(180deg);
+
+      }
+    }
+
+    @keyframes icon-turn {
+      0% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes icon-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+
+    .sub-menu {
+      display: none;
+
+      .list-group-item {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        border: unset;
+
+        &:first-child {
+          padding-top: 1rem;
+        }
+
+        &.active {
+          background-color: transparent !important;
+          color: #f94e5b;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

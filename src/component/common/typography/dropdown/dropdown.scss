@@ -1,0 +1,29 @@
+@import'../../../../assets/scss/abstracts/abstracts-dir.scss';
+.btn-group {
+    display: unset;
+    .dropdown-toggle {
+        &.show+.dropdown-menu {
+            display: unset;
+            position: absolute;
+    transform: translate3d(0px, 28px, 0px);
+    top: 0px;
+    left: 0px;
+    will-change: transform
+        }
+        &.no-caret{
+            &::after{
+                border: none;
+            }
+            
+        }
+    }
+
+    .dropdown-item {
+        font-size: 14px;
+        cursor: pointer;
+        &:active{
+            background-color:transparent;
+            color: $black;
+        }
+    }
+}
