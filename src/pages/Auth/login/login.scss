@@ -39,23 +39,23 @@
         font-size: fontSize(14px);
     }
 
-    .login-checkbox {
-        .custom-control {
-            font-size: fontSize(13px);
-            font-family: Montserrat;
+    // .login-checkbox {
+    //     .custom-control {
+    //         font-size: fontSize(13px);
+    //         font-family: Montserrat;
 
-            .custom-control-label {
-                &:before {
-                    width: fontSize(13px);
-                    height: fontSize(13px);
-                }
+    //         .custom-control-label {
+    //             &:before {
+    //                 width: fontSize(13px);
+    //                 height: fontSize(13px);
+    //             }
 
-                &:after {
-                    top:  fontSize(2px);
-                    left: -1.6rem;
-                }
-            }
-        }
+    //             &:after {
+    //                 top:  fontSize(2px);
+    //                 left: -1.6rem;
+    //             }
+    //         }
+    //     }
 
-    }
+    // }
 }

@@ -5,24 +5,23 @@ import {
   NormalButton,
   NormalCheckbox
 } from "../../../component/common";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import SimpleReactValidator from 'simple-react-validator';
 import { userSignin } from "../../../redux/actions/login";
 import { history } from "../../../helpers";
-import { LOGIN_TYPE, EXIST_LOCAL_STORAGE } from "../../../service/constants";
+import { EXIST_LOCAL_STORAGE } from "../../../service/constants";
 export class Login extends React.Component {
   state = {
     loginForm: {
       username: "",
       password: "",
-      userType: LOGIN_TYPE.ADMIN
     },
+    passwordType: 'password',
     isFormLoder: false,
     isKeepMe: false,
     keepMeObj: {
       username: "",
       password: "",
-      userType: LOGIN_TYPE.ADMIN
     }
   };
 
@@ -43,7 +42,7 @@ export class Login extends React.Component {
       this.setState({ isKeepMe: false });
     }
 
-
+   
 
     //validation set function start
     this.validator = new SimpleReactValidator({
@@ -67,7 +66,7 @@ export class Login extends React.Component {
 
   //login submit API call function  start
   handleSubmit = () => {
-    let { loginForm, keepMeObj, isKeepMe } = this.state;
+    let { loginForm, isKeepMe, keepMeObj } = this.state;
     this.setState({ isResErr: false })
     if (this.validator.allValid()) {
       this.validator.hideMessages();
@@ -112,59 +111,80 @@ export class Login extends React.Component {
   }
 
   render() {
-    let { loginForm, isFormLoder, isResErr, isKeepMe } = this.state;
+    let { loginForm, isFormLoder, isResErr, isKeepMe, passwordType } = this.state;
     return (
-      <div className="row login justify-content-md-center login-page">
-        <div className="col-md-9 col-xs-9">
-          <div className="row">
-            <div className="col-md-12 title">
-              <h4>Sign in to access Juggle</h4>
-              <h4>Super Admin Portal</h4>
-            </div>
-          </div>
 
-          <div className="row">
-            <div className="col-md-12">
-              <div className="form-group">
+      <>
+
+        <div className="card shadow zindex-100 mb-0">
+          <div className="card-body px-md-5 py-5">
+            <div className="mb-5">
+              <h6 className="h3">Login</h6>
+              <p className="text-muted mb-0">Sign in to your account to continue.</p>
+            </div>
+            <span className="clearfix"></span>
+
+            <div className="form-group">
+              <label className="form-control-label">User Name</label>
+              <div className="input-group input-group-merge">
+                <div className="input-group-prepend">
+                  <span className="input-group-text material-icons">person</span>
+                </div>
                 <NormalInput
-                  placeholder="Email Address"
+                  placeholder="Email address or phone number"
                   name="username"
                   value={loginForm.username}
-                  className="form-control"
+                  className="form-control border-left-0"
                   onChange={this.handleInputChange}
                 />
-                {this.validator.message('User Name', loginForm.username, 'required|email')}
+
               </div>
-              <div className="form-group">
+              {this.validator.message('User Name', loginForm.username, 'required')}
+            </div>
+            <div className="form-group mb-4">
+              <div className="d-flex align-items-center justify-content-between">
+                <div>
+                  <label className="form-control-label">Password</label>
+                </div>
+                {/* <div className="mb-2">
+                    <a href="#!" className="small text-muted text-underline--dashed border-primary">Lost password?</a>
+                  </div> */}
+              </div>
+              <div className="input-group input-group-merge">
+                <div className="input-group-prepend">
+                  <span className="input-group-text material-icons">vpn_key</span>
+                </div>
                 <NormalInput
                   placeholder="Password"
                   name="password"
+                  type={passwordType}
                   value={loginForm.password}
-                  className="form-control"
+                  className="form-control border-left-0  border-right-0"
                   onChange={this.handleInputChange}
                 />
-                {this.validator.message('Password', loginForm.password, 'required')}
-                {isResErr ?
-                  <span className="text-danger validNo fs14">
-                    Email ID or Password entered is incorrect.
+                <div className="input-group-append">
+                  <span className="input-group-text material-icons cursor-pointer" onClick={() => { this.setState({ passwordType: passwordType === 'password' ? 'text' : 'password' }) }}>
+                    {passwordType === 'password' ? 'remove_red_eye' : 'visibility_off'}
+                  </span>
+                </div>
+              </div>
+              {this.validator.message('Password', loginForm.password, 'required')}
+              {isResErr ?
+                <span className="text-danger validNo fs14">
+                  Email ID or Password entered is incorrect.
                   </span> : ''}
-              </div>
-              <Link className="float-right" to="/auth/forgot">Forgot Password  </Link>
-              <div className="form-group form-check float-left pl-0 mb-5 login-checkbox">
-                <NormalCheckbox
-                  name="isKeepMe"
-                  checked={isKeepMe}
-                  label="Keep me signed in"
-                  id="isKeepMe"
-                  onChange={this.handleisKeepMeChange}
-                />
-
-              </div>
             </div>
-          </div>
+            <div className="form-group form-check float-left pl-0 mb-5 login-checkbox">
+              <NormalCheckbox
+                name="isKeepMe"
+                checked={isKeepMe}
+                label="Keep me signed in"
+                id="isKeepMe"
+                onChange={this.handleisKeepMeChange}
+              />
 
-          <div className="row">
-            <div className="col-md-12">
+            </div>
+            <div className="mt-4">
               <NormalButton
                 onClick={this.handleSubmit}
                 id="cancelProfile"
@@ -174,10 +194,76 @@ export class Login extends React.Component {
                 className="mb-2  btn-primary btn-block"
               />
             </div>
-          </div>
 
+          </div>
+          {/* <div className="card-footer px-md-5"><small>Not registered?</small>
+            <a href="#" className="small font-weight-bold">Create account</a></div> */}
         </div>
-      </div>
+        {/* <div className="row login justify-content-md-center login-page">
+          <div className="col-md-9 col-xs-9">
+            <div className="row">
+              <div className="col-md-12 title">
+                <h4>Sign in to access Juggle</h4>
+                <h4>Super Admin Portal</h4>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-12">
+                <div className="form-group">
+                  <NormalInput
+                    placeholder="Email Address"
+                    name="username"
+                    value={loginForm.username}
+                    className="form-control"
+                    onChange={this.handleInputChange}
+                  />
+                  {this.validator.message('User Name', loginForm.username, 'required|email')}
+                </div>
+                <div className="form-group">
+                  <NormalInput
+                    placeholder="Password"
+                    name="password"
+                    value={loginForm.password}
+                    className="form-control"
+                    onChange={this.handleInputChange}
+                  />
+                  {this.validator.message('Password', loginForm.password, 'required')}
+                  {isResErr ?
+                    <span className="text-danger validNo fs14">
+                      Email ID or Password entered is incorrect.
+                  </span> : ''}
+                </div>
+                <Link className="float-right" to="/auth/forgot">Forgot Password  </Link>
+                <div className="form-group form-check float-left pl-0 mb-5 login-checkbox">
+                  <NormalCheckbox
+                    name="isKeepMe"
+                    checked={isKeepMe}
+                    label="Keep me signed in"
+                    id="isKeepMe"
+                    onChange={this.handleisKeepMeChange}
+                  />
+
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-12">
+                <NormalButton
+                  onClick={this.handleSubmit}
+                  id="cancelProfile"
+                  label="sign in"
+                  outline={false}
+                  loader={isFormLoder}
+                  className="mb-2  btn-primary btn-block"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div> */}
+      </>
     );
   }
 }

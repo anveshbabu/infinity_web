@@ -1,9 +1,23 @@
-@import '../../../assets/scss//abstracts/abstracts-dir.scss';
+@import '../../../assets/scss/abstracts/abstracts-dir.scss';
 
 nav {
     &.navbar {
-        height: 73px;
-        background-color: $nav-bg;
+        /* align-items: center; */
+        border-right: 1px solid rgba(0, 0, 0, .1);
+        // box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, .3), 0px 1px 3px 1px rgba(60, 64, 67, .15);
+        color: rgba(0, 0, 0, .54);
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        height: 4.375rem;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+        /* justify-content: center; */
+        /* line-height: 20px; */
+        padding: 0 24px;
+        width: 100%;
+        white-space: nowrap;
+        background-color: $white;
+        clip-path: inset(0 -0.15rem -1.17rem 0px);
     }
 
     .menu-toggler {
@@ -16,13 +30,14 @@ nav {
         border-radius: 0.25rem;
 
         i {
-            color: $white;
+            color: rgba(0, 0, 0, .54);
+            ;
         }
     }
 
     .user-detail {
         li {
-            padding: 15px;
+            padding: 9px;
 
             a {
                 vertical-align: sub;
@@ -31,12 +46,14 @@ nav {
                     vertical-align: middle;
                 }
 
-                color: #ffffff;
+                color: rgba(0, 0, 0, .54);
+                ;
                 text-decoration: unset;
             }
 
             +li {
-                border-left: 1px solid #ffff;
+                border-left: 2px solid rgba(0, 0, 0, .54);
+                ;
             }
         }
     }

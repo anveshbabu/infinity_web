@@ -12,6 +12,9 @@ export class Sidebar extends React.Component {
     return (
       // <!-- Sidebar -->
       <div className="bg-white shadow" id="sidebar-wrapper">
+        <div className="sidebar-heading">
+        <span class="material-icons brand-logo">sentiment_satisfied_alt</span>
+          <h4 className="mx-3 sidebar-brand-text">Infinity</h4> </div>
         <div className="list-group list-group-flush">
           {menu.map(({ to, icon, text, submenu }, index) => {
             if (submenu.length > 0) {

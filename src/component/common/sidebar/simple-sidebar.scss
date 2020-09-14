@@ -21,22 +21,32 @@ body {
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-  padding-right: 35px;
-  padding-left: 35px;
-  padding-top: 35px;
+  height: 4.375rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  z-index: 1;
+.sidebar-brand-text {
+    display: inline;
+}
+  .brand-logo{
+    vertical-align: text-bottom;
+    font-size: 2rem
+  }
 }
 
 #sidebar-wrapper .list-group {
   width: fontSize(236px);
-  // margin: 0 1rem;
-  // margin-top: 1rem;
+ background-color: $white;
 }
 
 #page-content-wrapper {
   min-width: 100vw;
-  padding: 1.5rem;
+  // padding: 1.5rem;
 }
 
 .list-group.list-group-flush {
@@ -55,7 +65,7 @@ body {
     cursor: pointer;
     font-size: 15px;
     &.active {
-      background-color: #2D2F4E !important;
+      background-color:$primary-bg !important;
       color: #ffffff;
       border-color: #f8f9fa;
       i{

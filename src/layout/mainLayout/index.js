@@ -28,13 +28,18 @@ export class MainLayout extends React.Component {
   render() {
     return (
       <>
-        <Header />
+      
+       
         <div className="d-flex" id="wrapper">
-
-          <Sidebar />
+        <Sidebar />
+     
+        
           <div id="page-content-wrapper">
-
-            <section>{this.props.children}</section>
+          <Header />
+          <div className="container-fluid">
+          <section>{this.props.children}</section>
+          </div>
+           
           </div>
         </div>
         {/* <Footer /> */}

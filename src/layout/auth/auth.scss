@@ -12,3 +12,23 @@
     padding: 0 2rem;
     width: 100%;
 }
+
+.login-container{
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        pointer-events: none;
+        height: 430px;
+        background-color:$primary-bg;
+        border-bottom-left-radius: 2.5rem;
+    }
+    .login-body{
+        width: 100%;
+    overflow: hidden;
+    }
+}
