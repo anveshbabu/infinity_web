@@ -55,88 +55,55 @@ const routers = [
   },
   {
     component: "MainLayout",
-    path: "/users",
-    redirect: "/users/",
+    path: "/courses",
+    redirect: "/courses/",
     auth: false,
     exact: false,
     childrens: [
       {
-        component: "UsersList",
+        component: "Courses",
         path: "/",
         auth: false,
         exact: true
       },
-      {
-        component: "ViewProfile",
-        path: "/details",
-        auth: false,
-        exact: true
-      }
+      // {
+      //   component: "ViewProfile",
+      //   path: "/details",
+      //   auth: false,
+      //   exact: true
+      // }
     ]
   },
 
-  {
-    component: "MainLayout",
-    path: "/services",
-    redirect: "",
-    auth: false,
-    exact: false,
-    childrens: [
-      {
-        component: "Services",
-        path: "/",
-        auth: false,
-        exact: true
-      },
-      {
-        component: "AddServices",
-        path: "/create",
-        auth: false,
-        exact: true
-      }, {
-        component: "PropertiesTab",
-        path: "/properties",
-        auth: false,
-        exact: true
-      }
-    ]
-  },
+  // {
+  //   component: "MainLayout",
+  //   path: "/services",
+  //   redirect: "",
+  //   auth: false,
+  //   exact: false,
+  //   childrens: [
+  //     {
+  //       component: "Services",
+  //       path: "/",
+  //       auth: false,
+  //       exact: true
+  //     },
+  //     {
+  //       component: "AddServices",
+  //       path: "/create",
+  //       auth: false,
+  //       exact: true
+  //     }, {
+  //       component: "PropertiesTab",
+  //       path: "/properties",
+  //       auth: false,
+  //       exact: true
+  //     }
+  //   ]
+  // },
   
   
 
-  {
-    component: "MainLayout",
-    path: "/settings",
-    redirect: "/settings/",
-    auth: false,
-    exact: false,
-    childrens: [
-      {
-        component: "Settings",
-        path: "/",
-        auth: false,
-        exact: true
-      }
-      
-    ]
-  },
-
-  {
-    component: "MainLayout",
-    path: "/payments",
-    redirect: "/payments/",
-    auth: false,
-    exact: false,
-    childrens: [
-      {
-        component: "Payments",
-        path: "/",
-        auth: false,
-        exact: true
-      }
-      
-    ]
-  },
   
   //dev layout
 

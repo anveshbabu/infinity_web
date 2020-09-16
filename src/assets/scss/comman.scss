@@ -3,6 +3,33 @@
 // :button:input:check-box:search-box:table:cursor:container:sidebar:modal:cards:tabs:typography:text //
 
 
+.btn{
+
+
+&.btn-light-primary {
+  color: $primary-bg;
+  background-color: #f7ebc8;
+  border-color: transparent;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: #EEF0F8;
+  font-size: fontSize(13px) !important;
+}
 
 .material-icons{
   vertical-align: middle;

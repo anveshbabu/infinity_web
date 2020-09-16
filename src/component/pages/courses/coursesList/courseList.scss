@@ -1,0 +1,28 @@
+@import'../../../../assets/scss/index.scss';
+.course-list-page{
+    .font-weight-bold {
+        font-weight: 500 !important;
+    }
+    .card{
+        box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05) !important;
+        border: 0;
+        margin-bottom: fontSize(25px);
+        height: calc(100% - 25px);
+        border-radius: 0.42rem;
+        .card-header{
+            background: transparent;
+            h4{
+                font-size: 1.35rem !important;
+                font-weight: bold;
+                transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+            }
+        }
+        .card-body{
+            .attendance-section{
+                span{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
