@@ -66,41 +66,42 @@ export class Login extends React.Component {
 
   //login submit API call function  start
   handleSubmit = () => {
-    let { loginForm, isKeepMe, keepMeObj } = this.state;
-    this.setState({ isResErr: false })
-    if (this.validator.allValid()) {
-      this.validator.hideMessages();
-      this.setState({ isFormLoder: true });
-      userSignin(loginForm).then((data) => {
-        console.log(isKeepMe)
-        if (!!data) {
-          localStorage.setItem(EXIST_LOCAL_STORAGE.USER_ID, data);
-          if (isKeepMe) {
-            keepMeObj.username = loginForm.username;
-            keepMeObj.password = loginForm.password;
-            this.setState({ keepMeObj });
-            localStorage.setItem(EXIST_LOCAL_STORAGE.IS_KEEP_ME, 1);
-            localStorage.setItem(EXIST_LOCAL_STORAGE.KEEP_ME_OBJ, JSON.stringify(keepMeObj));
-          } else {
-            localStorage.setItem(EXIST_LOCAL_STORAGE.IS_KEEP_ME, 0);
-            localStorage.setItem(EXIST_LOCAL_STORAGE.KEEP_ME_OBJ, JSON.stringify(keepMeObj));
-          }
-          history.push(`/dashboard`)
-        }
-        this.setState({ isFormLoder: false })
-      }).catch((error) => {
-        this.setState({ isFormLoder: false })
-        let err = error ? error.error : '';
-        if (err === 'Invalid combination. Have another go.') {
-          this.setState({ isResErr: true })
-        } else {
-        }
+    history.push(`/dashboard`)
+    // let { loginForm, isKeepMe, keepMeObj } = this.state;
+    // this.setState({ isResErr: false })
+    // if (this.validator.allValid()) {
+    //   this.validator.hideMessages();
+    //   this.setState({ isFormLoder: true });
+    //   userSignin(loginForm).then((data) => {
+    //     console.log(isKeepMe)
+    //     if (!!data) {
+    //       localStorage.setItem(EXIST_LOCAL_STORAGE.USER_ID, data);
+    //       if (isKeepMe) {
+    //         keepMeObj.username = loginForm.username;
+    //         keepMeObj.password = loginForm.password;
+    //         this.setState({ keepMeObj });
+    //         localStorage.setItem(EXIST_LOCAL_STORAGE.IS_KEEP_ME, 1);
+    //         localStorage.setItem(EXIST_LOCAL_STORAGE.KEEP_ME_OBJ, JSON.stringify(keepMeObj));
+    //       } else {
+    //         localStorage.setItem(EXIST_LOCAL_STORAGE.IS_KEEP_ME, 0);
+    //         localStorage.setItem(EXIST_LOCAL_STORAGE.KEEP_ME_OBJ, JSON.stringify(keepMeObj));
+    //       }
+    //       history.push(`/dashboard`)
+    //     }
+    //     this.setState({ isFormLoder: false })
+    //   }).catch((error) => {
+    //     this.setState({ isFormLoder: false })
+    //     let err = error ? error.error : '';
+    //     if (err === 'Invalid combination. Have another go.') {
+    //       this.setState({ isResErr: true })
+    //     } else {
+    //     }
 
-      })
+    //   })
 
-    } else {
-      this.validator.showMessages();
-    }
+    // } else {
+    //   this.validator.showMessages();
+    // }
 
   }
 
