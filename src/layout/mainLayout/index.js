@@ -11,14 +11,14 @@ export class MainLayout extends React.Component {
     console.log(userId )
     console.log(authToken)
     console.log('-----------',!(!!authToken && !!userId))
-    if (!(!!authToken && !!userId)) {
-      console.log('no token')
-      history.push("/auth/login")
+    // if (!(!!authToken && !!userId)) {
+    //   console.log('no token')
+    //   history.push("/auth/login")
     
-    }else{
-      console.log('Yes token')
+    // }else{
+    //   console.log('Yes token')
      
-    }
+    // }
 
   }
 

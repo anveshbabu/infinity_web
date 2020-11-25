@@ -75,6 +75,29 @@ const routers = [
     ]
   },
 
+  {
+    component: "MainLayout",
+    path: "/map",
+    redirect: "/map/",
+    auth: false,
+    exact: false,
+    childrens: [
+      {
+        component: "MapPage",
+        path: "/",
+        auth: false,
+        exact: true
+      },
+      // {
+      //   component: "ViewProfile",
+      //   path: "/details",
+      //   auth: false,
+      //   exact: true
+      // }
+    ]
+  },
+
+
   // {
   //   component: "MainLayout",
   //   path: "/services",

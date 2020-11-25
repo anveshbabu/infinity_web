@@ -2,6 +2,7 @@
 export { Login,SignUp,Forgot,Reset} from './Auth';
 export { Dashboard} from './dashboard';
 export { Courses} from './courses';
+export { MapPage} from './map';
 
 
 

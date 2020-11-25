@@ -15,7 +15,7 @@ export var api = async function ({ method = "get", api, id, body, status = false
 		}
 	}
 
-	console.log(api,id,body)
+	console.log(api, id, body)
 
 	return await new Promise((resolve, reject) => {
 		// setting token
@@ -99,4 +99,30 @@ export const apiServiceURL = (baseURL = 'normal') => {
 
 	return getMicroServiceURL(baseURL)
 
+}
+
+
+
+export var graphqlRequest = async function (url, queryParams, queryVariable, operationName) {
+		return await new Promise((resolve, reject) => {
+		console.log("\n\nqueryParams\n\n", queryParams, "\n\nqueryVariable:", queryVariable);
+		const token = sessionStorage.getItem('token');
+		let result = fetch(url, {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+				'Authorization': token ? token : ""
+			},
+			body: JSON.stringify({
+				"query": queryParams,
+				"variables": queryVariable,
+				operationName: operationName
+			})
+		})
+		 resolve(result)
+		
+	
+
+	})
 }

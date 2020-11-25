@@ -9,6 +9,12 @@ const menu = [
     icon: "class",
     text: "courses",
     submenu:[]
+  },
+  {
+    to: "/map",
+    icon: "room",
+    text: "Map",
+    submenu:[]
   }
   
 ];
