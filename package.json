@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "ckeditor4-react": "^1.1.1",
-    "highcharts": "^8.0.1",
+    "highcharts": "^9.0.0",
     "kepler.gl": "^2.3.2",
     "mapbox-gl": "^1.13.0",
     "moment-timezone": "^0.5.28",
